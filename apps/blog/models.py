@@ -1,11 +1,12 @@
 from django.db import models
 
-# from django_prose_editor.fields import ProseEditorField
-# from django_markdown.models import MarkdownField
-
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(editable=False)
+    slug = models.SlugField()
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+class PinnedPost(models.Model):
+    post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
+    cover = models.URLField()

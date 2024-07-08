@@ -39,10 +39,6 @@ INSTALLED_APPS = [
     # Apps
     "apps.user",
     "apps.blog",
-    # Third-party apps
-    # "django_prose_editor",
-    # "django_markdown",
-    # "markdownx",
 ]
 
 MIDDLEWARE = [
