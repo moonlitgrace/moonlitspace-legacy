@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block title %}
+{{ profile.aka }}
+{% endblock %}
+
+{% block body %}
+<div class="profile-box">
+    <img src="{{ profile.avatar }}">
+    <div class="info-and-links">
+        <h1>{{ profile.name }}</h1>
+        <span>aka: @{{ profile.aka }}</span>
+        <div class="social-links">
+            {% if profile.github %}
+            <a href="{{ profile.github }}" target="_blank">
+                Github
+            </a>
+            {% endif %}
+            {% if profile.discord %}
+            <a href="{{ profile.discord }}" target="_blank">
+                Discord
+            </a>
+            {% endif %}
+            {% if profile.telegram %}
+            <a href="{{ profile.telegram }}" target="_blank">
+                Telegram
+            </a>
+            {% endif %}
+            {% if profile.twitter %}
+            <a href="{{ profile.twitter }}" target="_blank">
+                Twitter
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

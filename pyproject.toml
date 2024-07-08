@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "django_core"
+version = "0.1.0"
+description = ""
+authors = ["moonlitgrace <moonlitgrace.gaia@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.6"
+django-prose-editor = "^0.4.6"
+django-markdown = "^0.8.4"
+django-markdownx = "^4.0.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
