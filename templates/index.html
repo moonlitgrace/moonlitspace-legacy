@@ -10,33 +10,53 @@
 {% endblock %}
 
 {% block body %}
-<div class="profile-box">
-    <img src="{{ profile.avatar }}">
-    <div class="info-and-links">
-        <h1>{{ profile.name }}</h1>
-        <span>aka: @{{ profile.aka }}</span>
-        <div class="social-links">
-            {% if profile.github %}
-            <a href="{{ profile.github }}" target="_blank">
-                Github
-            </a>
-            {% endif %}
-            {% if profile.discord %}
-            <a href="{{ profile.discord }}" target="_blank">
-                Discord
-            </a>
-            {% endif %}
-            {% if profile.telegram %}
-            <a href="{{ profile.telegram }}" target="_blank">
-                Telegram
-            </a>
-            {% endif %}
-            {% if profile.twitter %}
-            <a href="{{ profile.twitter }}" target="_blank">
-                Twitter
-            </a>
-            {% endif %}
+<main>
+    <div class="profile-box">
+        <img src="{{ profile.avatar }}">
+        <div class="info-and-links">
+            <h1>{{ profile.name }}</h1>
+            <span>aka: @{{ profile.aka }}</span>
+            <div class="social-links">
+                {% if profile.github %}
+                <a href="{{ profile.github }}" target="_blank">
+                    Github
+                </a>
+                {% endif %}
+                {% if profile.discord %}
+                <a href="{{ profile.discord }}" target="_blank">
+                    Discord
+                </a>
+                {% endif %}
+                {% if profile.telegram %}
+                <a href="{{ profile.telegram }}" target="_blank">
+                    Telegram
+                </a>
+                {% endif %}
+                {% if profile.twitter %}
+                <a href="{{ profile.twitter }}" target="_blank">
+                    Twitter
+                </a>
+                {% endif %}
+            </div>
         </div>
     </div>
-</div>
+    <div class="pinned-posts">
+        <span class="title">Moonlit<span>Posts</span></span>
+        <div class="posts-grid-container">
+            {% for post in pinned_posts %}
+                <div class="post-card">
+                    <a
+                        href="/post/{{ post.post.slug }}"
+                        class="post-title"
+                    >
+                        <span class="id">{{ post.post.pk }}.</span>{{ post.post.title }}</a>
+                    <div class="post-bottom">
+                        <img src="{{ post.cover }}">
+                        <p>{{ post.content|truncatechars:75 }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
 {% endblock %}

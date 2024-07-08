@@ -1,3 +1,9 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
 /* PROFILE SECTION START */
 
 .profile-box {
@@ -46,3 +52,70 @@
 }
 
 /* PROFILE SECTION END */
+
+/* PINNED POSTS START */
+
+main .pinned-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.pinned-posts .title {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--neutral);
+}
+
+.pinned-posts .title span {
+    color: var(--foreground);
+}
+
+.pinned-posts .posts-grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.posts-grid-container .post-card {
+    border: 1px solid var(--neutral);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.posts-grid-container .post-card .post-bottom {
+    display: flex;
+    gap: 20px;
+}
+
+.posts-grid-container .post-card .post-bottom img {
+    width: 75px;
+    height: 75px;
+}
+
+.posts-grid-container .post-card .post-bottom p {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.posts-grid-container .post-card .post-title {
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: none;
+    color: inherit;
+}
+
+.posts-grid-container .post-card .post-title:hover {
+    text-decoration: underline;
+}
+
+.posts-grid-container .post-card .post-title span {
+    color: var(--neutral);
+}
+
+/* PINNED POSTS END */
