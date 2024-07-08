@@ -67,13 +67,13 @@ Pillow = "*"
 
 [[package]]
 name = "django-prose-editor"
-version = "0.4.6"
+version = "0.5.0"
 description = "Prose editor for the Django admin based on ProseMirror"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "django_prose_editor-0.4.6-py3-none-any.whl", hash = "sha256:6be1e54f376d550248dafa59bf6af3a66007b5e79d4c3ec2a68d429056d7aadd"},
-    {file = "django_prose_editor-0.4.6.tar.gz", hash = "sha256:90d567d03dcb098759a098a2120696a940cece9cd3136399480c99391a703f92"},
+    {file = "django_prose_editor-0.5.0-py3-none-any.whl", hash = "sha256:618edd22787739cf92c2c11e50c837b9651510687be9d624e99b93a987f768f1"},
+    {file = "django_prose_editor-0.5.0.tar.gz", hash = "sha256:682512fc47ae419487f8c037d7e46facd1220c97dabd190e153e080fcdf24910"},
 ]
 
 [package.dependencies]
@@ -223,4 +223,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "a2a7f3245d6250f498ace5de3bef5eceb2cdc39e59af6abb4563664668e09afe"
+content-hash = "8eae7eb393dd802a5594bd9b7035e3ff05d7592e2442b88d309bfc27a0e1a59a"
