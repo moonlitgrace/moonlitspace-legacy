@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'newsletter/css/error.css' %}">
+<link rel="stylesheet" href="{% static 'newsletter/css/state.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -12,10 +12,10 @@ Join program - MoonlitLetter
 {% block body %}
 <div class="vf-container">
     <h1 class="title">
-        {{ error_title|default:"Oops!" }}
+        {{ title|default:"Oops!" }}
     </h1>
     <span class="helptext">
-        {{ error_message|default:"Something went wrong! please try again later." }}
+        {{ message|default:"Something went wrong! please try again later." }}
     </span>
 </div>
 {% endblock %}
