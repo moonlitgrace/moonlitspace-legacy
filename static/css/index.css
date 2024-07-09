@@ -146,6 +146,10 @@ main .latest-posts {
     text-decoration: underline;
 }
 
+.latest-posts .post .title .id {
+    color: var(--neutral);
+}
+
 .latest-posts .post .content {
     font-size: 14px;
     color: var(--accent);
