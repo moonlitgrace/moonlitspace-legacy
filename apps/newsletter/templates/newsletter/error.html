@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'newsletter/css/error.css' %}">
+{% endblock %}
+
+{% block title %}
+Join program - MoonlitLetter
+{% endblock %}
+
+{% block body %}
+<div class="vf-container">
+    <h1 class="title">
+        {% if error_title %}
+            {{ error_title }}
+        {% else %}
+            Oops!
+        {% endif %}
+    </h1>
+    <span class="helptext">
+        {% if error_message %}
+            {{ error_message }}
+        {% else %}
+            Something went wrong! please try again later.
+        {% endif %}
+    </span>
+</div>
+{% endblock %}
