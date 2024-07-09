@@ -7,9 +7,8 @@ def markdown_to_text(md_string):
 
     tree = HTMLParser(html)
     # get only paragraphs tags text
-    p_tags = tree.css_first("p")
+    text = tree.css_first("p").text()
     # text = "\n".join([p.text() for p in p_tags])
-    text = p_tags.text()
     # remove code snippets
     text = re.sub(r'```.*?```', '', text, flags=re.DOTALL)
     return text
