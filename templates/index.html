@@ -63,7 +63,7 @@
         {% for post in latest_posts %}
             <div class="post">
                 <a href="/post/{{ post.slug }}" class="title"><span class="id">{{ post.pk }}.</span>{{ post.title }}</a>
-                <p class="content">{{ post.content|markdown_to_text|truncatechars:150 }}</p>
+                <p class="content">{{ post.content|markdown_to_text }}</p>
             </div>
         {% endfor %}
     </div>
