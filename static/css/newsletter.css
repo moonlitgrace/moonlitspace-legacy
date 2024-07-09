@@ -1,0 +1,64 @@
+.newsletter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.newsletter-container .title {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.newsletter-container .title span {
+    color: var(--neutral);
+}
+
+.newsletter-container .subtitle {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.newsletter-container img {
+    width: 100px;
+    height: 100px;
+}
+
+.newsletter-container form {
+    display: flex;
+    gap: 20px;
+}
+
+.newsletter-container form input[type="email"] {
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.newsletter-container form input[type="email"]:focus {
+    border-color: var(--accent);
+}
+
+.newsletter-container form input {
+    font-family: inherit;
+    padding: 15px;
+    border: 1px solid var(--neutral);
+    outline: none;
+    background: transparent;
+    color: inherit;
+    transition: 0.1s linear;
+}
+
+.newsletter-container form input[type="submit"] {
+    font-size: 15px;
+    color: inherit;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.newsletter-container form input[type="submit"]:hover,
+.newsletter-container form input[type="submit"]:focus {
+    border-color: var(--accent);
+}

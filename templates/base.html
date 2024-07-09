@@ -7,9 +7,11 @@
         <link rel="icon" href="{% static 'favicon.svg' %}" type="image/x-icon" />
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/newsletter.css' %}">
         {% block head %}{% endblock %}
     </head>
     <body class="container">
         {% block body %}{% endblock %}
+        {% include "newsletter.html" %}
     </body>
 </html>

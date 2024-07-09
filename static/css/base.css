@@ -79,5 +79,8 @@ body {
     padding: 70px 0 70px 0;
     max-width: 700px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
 }
 
