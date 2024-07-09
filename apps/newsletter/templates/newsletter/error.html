@@ -12,18 +12,10 @@ Join program - MoonlitLetter
 {% block body %}
 <div class="vf-container">
     <h1 class="title">
-        {% if error_title %}
-            {{ error_title }}
-        {% else %}
-            Oops!
-        {% endif %}
+        {{ error_title|default:"Oops!" }}
     </h1>
     <span class="helptext">
-        {% if error_message %}
-            {{ error_message }}
-        {% else %}
-            Something went wrong! please try again later.
-        {% endif %}
+        {{ error_message|default:"Something went wrong! please try again later." }}
     </span>
 </div>
 {% endblock %}
