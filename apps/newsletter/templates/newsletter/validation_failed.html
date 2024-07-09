@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'newsletter/css/validation_failed.css' %}">
+{% endblock %}
+
+{% block title %}
+Join program - MoonlitLetter
+{% endblock %}
+
+{% block body %}
+<div class="vf-container">
+    <h1 class="title">Oops!</h1>
+    <span class="helptext">Email already subscribed, please try another one.</span>
+</div>
+{% endblock %}
