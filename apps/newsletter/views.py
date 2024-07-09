@@ -9,4 +9,4 @@ def newsletter_validate_view(request):
     if NewsLetterEntry.objects.filter(email=email).exists():
         return HttpResponse("EMail already exiss")
 
-    return HttpResponse(email)
+    return render(request, "newsletter/verification_email_send.html", {"email": email})

@@ -1,0 +1,21 @@
+.vms-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.vms-container .title {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.vms-container h3 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.vms-container .helptext {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--accent);
+}

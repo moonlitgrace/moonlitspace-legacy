@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'newsletter/css/verification_email_send.css' %}">
+{% endblock %}
+
+{% block title %}
+Join program - MoonlitLetter
+{% endblock %}
+
+{% block body %}
+<div class="vms-container">
+    <h1 class="title">Verification email has been sended!</h1>
+    <h3>to: {{ email }}</h3>
+    <span class="helptext">Please verify your email to join program.</span>
+</div>
+{% endblock %}
