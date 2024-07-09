@@ -120,3 +120,37 @@ main .pinned-posts {
 }
 
 /* PINNED POSTS END */
+
+/* LATEST POSTS START */
+
+main .latest-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.latest-posts .post {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.latest-posts .post .title {
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: none;
+    color: inherit;
+}
+
+.latest-posts .post .title:hover {
+    text-decoration: underline;
+}
+
+.latest-posts .post .content {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+    line-height: 20px;
+}
+
+/* LATEST POSTS END */

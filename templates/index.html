@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load markdown_extras %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
@@ -57,6 +58,14 @@
                 </div>
             {% endfor %}
         </div>
+    </div>
+    <div class="latest-posts">
+        {% for post in latest_posts %}
+            <div class="post">
+                <a href="/post/{{ post.slug }}" class="title"><span>{{ post.pk }}.</span>{{ post.title }}</a>
+                <p class="content">{{ post.content|markdown_to_text }}</p>
+            </div>
+        {% endfor %}
     </div>
 </main>
 {% endblock %}
