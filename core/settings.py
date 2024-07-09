@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # Apps
     "apps.user",
     "apps.blog",
+    "apps.newsletter",
 ]
 
 MIDDLEWARE = [
