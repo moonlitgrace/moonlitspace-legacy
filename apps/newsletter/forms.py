@@ -6,3 +6,6 @@ class NewsLetterEntryFrom(forms.ModelForm):
     class Meta:
         model = NewsLetterEntry
         fields = ("email", )
+        widgets = {
+            "email": forms.EmailInput(attrs={"placeholder": "Email Address*"})
+        }
