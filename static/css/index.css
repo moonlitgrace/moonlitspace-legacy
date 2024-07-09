@@ -157,4 +157,20 @@ main .latest-posts {
     line-height: 20px;
 }
 
+.latest-posts a.btn {
+    text-decoration: none;
+    color: inherit;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 15px;
+    border: 1px solid var(--neutral);
+    width: max-content;
+    transition: 0.1s linear;
+}
+
+.latest-posts a.btn:hover {
+    border-color: var(--accent);
+    text-decoration: underline;
+}
+
 /* LATEST POSTS END */
