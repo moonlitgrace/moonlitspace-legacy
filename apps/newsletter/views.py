@@ -12,7 +12,8 @@ def newsletter_validate_view(request):
         })
     return render(request, "newsletter/verification_email_send.html", {"email": email})
 
-def newsletter_verification_view(request, entry_id):
+def newsletter_verification_view(request):
+    entry_id = request.GET.get("entry_id")
     try:
         entry = NewsLetterEntry.objects.get(entry_id=entry_id)
         if not entry.verified:
