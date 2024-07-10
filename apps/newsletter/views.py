@@ -1,8 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template.loader import get_template
 from django.core.mail import send_mail
 from django.urls import reverse
-from django.conf import settings
 
 from .models import NewsLetterEntry
 
@@ -10,6 +9,8 @@ from .models import NewsLetterEntry
 # Create your views here.
 def newsletter_validate_view(request):
     email = request.POST.get("email")
+    if email is None:
+        return redirect("home")
 
     if NewsLetterEntry.objects.filter(email=email).exists():
         return render(
