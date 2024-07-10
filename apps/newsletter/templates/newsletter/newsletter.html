@@ -4,6 +4,6 @@
     <form method="post" action="{% url 'newsletter_validate' %}">
         {% csrf_token %}
         {{ newsletter_form.email }}
-        <input type="submit" value="Join Program">
+        <input class="btn" type="submit" value="Join Program">
     </form>
 </div>

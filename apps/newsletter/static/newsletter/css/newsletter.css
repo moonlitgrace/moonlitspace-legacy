@@ -57,8 +57,3 @@
     font-weight: 900;
     cursor: pointer;
 }
-
-.newsletter-container form input[type="submit"]:hover,
-.newsletter-container form input[type="submit"]:focus {
-    border-color: var(--accent);
-}

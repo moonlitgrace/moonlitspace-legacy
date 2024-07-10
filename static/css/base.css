@@ -84,3 +84,23 @@ body {
     gap: 70px;
 }
 
+.btn {
+    text-decoration: none;
+    color: inherit;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 15px;
+    border: 1px solid var(--neutral);
+    width: max-content;
+    transition: 0.1s linear;
+    outline: none;
+}
+
+.btn:hover,
+.btn:focus {
+    border-color: var(--accent);
+}
+
+a.btn:hover {
+    text-decoration: underline;
+}
