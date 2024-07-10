@@ -13,6 +13,9 @@ markdown2 = {extras = ["all"], version = "^2.4.13"}
 selectolax = "^0.3.21"
 
 
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

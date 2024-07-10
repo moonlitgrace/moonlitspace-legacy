@@ -61,9 +61,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             # https://stackoverflow.com/a/55290208/23275228
-            "libraries": {
-                "markdown_extras": "templatetags.markdown_extras"
-            },
+            "libraries": {"markdown_extras": "templatetags.markdown_extras"},
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
@@ -128,9 +126,7 @@ STATIC_URL = "static/"
 
 STATIC_ROOT = Path(BASE_DIR / "staticfiles")
 
-STATICFILES_DIRS = [
-    Path(BASE_DIR / "static")
-]
+STATICFILES_DIRS = [Path(BASE_DIR / "static")]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

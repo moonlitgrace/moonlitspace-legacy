@@ -8,6 +8,7 @@ class BlogPostAdmin(admin.ModelAdmin):
 
     search_fields = ("title",)
 
+
 # Register your models here.
 admin.site.register(BlogPost, BlogPostAdmin)
 admin.site.register(PinnedPost)

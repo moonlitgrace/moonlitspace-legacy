@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 
 from .models import Profile
 
+
 class ProfileAdminForm(forms.ModelForm):
     class Meta:
         model = Profile
@@ -14,7 +15,11 @@ class ProfileAdminForm(forms.ModelForm):
         type = cleaned_data.get("type")
 
         if active:
-            if Profile.objects.filter(type=type, active=True).exclude(pk=self.instance.pk).exists():
+            if (
+                Profile.objects.filter(type=type, active=True)
+                .exclude(pk=self.instance.pk)
+                .exists()
+            ):
                 raise ValidationError(
                     {"type": "An active profile with the same type already exists."}
                 )

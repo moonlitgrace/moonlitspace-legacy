@@ -3,6 +3,7 @@ from django.shortcuts import render
 from apps.user.models import Profile
 from apps.blog.models import PinnedPost, BlogPost
 
+
 def index(request):
     profile = Profile.objects.get(type="anonymous", active=True)
     pinned_posts = PinnedPost.objects.all()

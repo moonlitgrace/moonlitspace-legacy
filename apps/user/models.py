@@ -11,17 +11,21 @@ class Profile(models.Model):
     ANONYM = "anonymous"
     PERSONAL = "personal"
 
-    PROFILE_TYPE_CHOICES = {
-        ANONYM: "Anonymous",
-        PERSONAL: "Personal"
-    }
+    PROFILE_TYPE_CHOICES = {ANONYM: "Anonymous", PERSONAL: "Personal"}
 
     # Profile config
-    type = models.CharField(max_length=10, choices=PROFILE_TYPE_CHOICES, default=ANONYM, verbose_name="Profile Type")
+    type = models.CharField(
+        max_length=10,
+        choices=PROFILE_TYPE_CHOICES,
+        default=ANONYM,
+        verbose_name="Profile Type",
+    )
     active = models.BooleanField(default=False)
     # Basic
     name = models.CharField(max_length=100, null=True, blank=True)
-    aka = models.CharField(max_length=100, verbose_name="Also Known As", null=True, blank=True)
+    aka = models.CharField(
+        max_length=100, verbose_name="Also Known As", null=True, blank=True
+    )
     email = models.EmailField(null=True, blank=True)
     avatar = models.URLField(null=True, blank=True)
     bio = models.TextField(null=True, blank=True)

@@ -10,6 +10,7 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
 
+
 class PinnedPost(models.Model):
     post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
     cover = models.URLField()
