@@ -19,8 +19,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Initialize environment variables
 # https://alicecampkin.medium.com/how-to-set-up-environment-variables-in-django-f3c4db78c55f
 env = environ.Env(
-    # DEBUG should parse as boolean
-    DEBUG=(bool, False)
+    # list of variables that should parse as boolean
+    DEBUG=(bool, False),
+    EMAIL_USE_TLS=(bool, True)
 )
 environ.Env.read_env(env_file=Path(BASE_DIR / ".env"))
 
@@ -144,3 +145,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Custom user model as default
 AUTH_USER_MODEL = "user.CustomUser"
+
+# Configure SMTP
+EMAIL_BACKEND = env("EMAIL_BACKEND")
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_USE_TLS = env("EMAIL_USE_TLS")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+
+DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
