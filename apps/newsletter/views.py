@@ -12,10 +12,19 @@ def newsletter_validate_view(request):
         })
     return render(request, "newsletter/verification_email_send.html", {"email": email})
 
-def newsletter_verify_view(request, entry_id):
+def newsletter_verification_view(request, entry_id):
     try:
         entry = NewsLetterEntry.objects.get(entry_id=entry_id)
-        entry.verified = True
-        entry.save()
+        if not entry.verified:
+            entry.verified = True
+            entry.save()
+
+        return render(request, "newsletter/state.html", context={
+            "title": "Woohoo!",
+            "message": "Verification completed successfully! from now you'll get updates via email."
+        })
     except NewsLetterEntry.DoesNotExist:
-        pass
+        return render(request, "newsletter/state.html", context={
+            "title": "Oh no!",
+            "message": "Email entry not found, please follow the steps shown on the verification email that we've sended before. Or try again."
+        })
