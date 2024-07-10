@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env(
     # list of variables that should parse as boolean
     DEBUG=(bool, False),
-    EMAIL_USE_TLS=(bool, True)
+    EMAIL_USE_TLS=(bool, True),
 )
 environ.Env.read_env(env_file=Path(BASE_DIR / ".env"))
 

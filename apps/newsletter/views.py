@@ -11,8 +11,6 @@ from .models import NewsLetterEntry
 def newsletter_validate_view(request):
     email = request.POST.get("email")
 
-
-
     if NewsLetterEntry.objects.filter(email=email).exists():
         return render(
             request,
@@ -25,8 +23,10 @@ def newsletter_validate_view(request):
     # create new entry
     entry = NewsLetterEntry.objects.create(email=email)
 
-    verification_url = request.build_absolute_uri(reverse("newsletter_verification", kwargs={"entry_id": entry.entry_id}))
-    context = { "verification_url": verification_url }
+    verification_url = request.build_absolute_uri(
+        reverse("newsletter_verification", kwargs={"entry_id": entry.entry_id})
+    )
+    context = {"verification_url": verification_url}
     template = get_template("email/newsletter_verification.html").render(context)
 
     subject = "[moonlitspace] - Email Verification"
