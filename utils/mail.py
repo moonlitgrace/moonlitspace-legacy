@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 
 def send_moonlit_mail(
     subject: str,
-    to_email: str,
+    recipient_list: list[str],
     template_name: str,
     context: dict | None = None,
     error_template_name: str | None = None,
@@ -15,7 +15,7 @@ def send_moonlit_mail(
         email = mail.EmailMessage(
             subject=subject,
             body=html_template,
-            to=[to_email],
+            to=recipient_list,
             connection=connection,
         )
         email.content_subtype = "html"

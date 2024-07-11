@@ -33,7 +33,7 @@ def newsletter_validate_view(request):
     context = {"verification_url": verification_url}
     subject = "[moonlitspace] - Email Verification"
 
-    send_moonlit_mail(subject, email, template_name, context)
+    send_moonlit_mail(subject, [email], template_name, context)
     return render(request, "newsletter/verification_email_send.html", {"email": email})
 
 
