@@ -3,6 +3,8 @@ from django.template.loader import get_template
 from django.core.mail import send_mail
 from django.urls import reverse
 
+from utils.mail import send_moonlit_mail
+
 from .models import NewsLetterEntry
 
 
@@ -27,20 +29,11 @@ def newsletter_validate_view(request):
     verification_url = request.build_absolute_uri(
         reverse("newsletter_verification", kwargs={"entry_id": entry.entry_id})
     )
+    template_name = "email/newsletter_verification.html"
     context = {"verification_url": verification_url}
-    template = get_template("email/newsletter_verification.html").render(context)
-
     subject = "[moonlitspace] - Email Verification"
-    recipient_list = [email]
 
-    send_mail(
-        subject,
-        None,
-        None,
-        recipient_list,
-        fail_silently=False,
-        html_message=template,
-    )
+    send_moonlit_mail(subject, email, template_name, context)
     return render(request, "newsletter/verification_email_send.html", {"email": email})
 
 
