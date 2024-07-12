@@ -30,10 +30,13 @@ def newsletter_validate_view(request):
         reverse("newsletter_verification", kwargs={"entry_id": entry.entry_id})
     )
     template_name = "email/newsletter_verification.html"
+    error_template_name = "email/state.html"
     context = {"verification_url": verification_url}
     subject = "[moonlitspace] - Email Verification"
 
-    send_moonlit_mail(subject, email, template_name, context)
+    success, error_response = send_moonlit_mail(subject, email, template_name, context, error_template_name)
+    if not success:
+        return error_response
     return render(request, "newsletter/verification_email_send.html", {"email": email})
 
 
