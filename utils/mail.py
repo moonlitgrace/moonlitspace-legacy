@@ -1,8 +1,9 @@
 from django.core.mail import get_connection, EmailMessage, BadHeaderError
 from django.template.loader import render_to_string
-from django.http import HttpResponse
 from django.conf import settings
 from typing import Union, Optional
+
+from apps.newsletter.utils import render_error_http_response
 
 
 def send_moonlit_mail(
@@ -13,7 +14,6 @@ def send_moonlit_mail(
     error_template_name: Optional[str] = None,
 ):
     if not isinstance(recipient_list, list):
-        """ check if recipient list is a list, if not - convert to a list """
         recipient_list = list(recipient_list)
 
     html_template = render_to_string(template_name, context)
@@ -31,25 +31,21 @@ def send_moonlit_mail(
 
         return True, None
     except BadHeaderError:
-        context = {
-            "title": "Oh no!",
-            "message": "Invalid header found"
-        }
         if error_template_name:
-            error_response = render_to_string(error_template_name, context)
-            return False, HttpResponse(error_response)
+            return False, render_error_http_response(error_template_name, {
+                "title": "Oh no!",
+                "message": "Invalid header found"
+            })
         else:
             return False, None
     except Exception as e:
+        """ handle other possible exceptions """
         if settings.DEBUG:
             print(e)
-        """ handle other possible exceptions """
-        context = {
-            "title": "Oops!",
-            "message": "Something went wrong, please re-check email and try again."
-        }
         if error_template_name:
-            error_response = render_to_string(error_template_name, context)
-            return False, HttpResponse(error_response)
+            return False, render_error_http_response(error_template_name, {
+                "title": "Oops!",
+                "message": "Something went wrong, please re-check email and try again."
+            })
         else:
             return False, None
