@@ -153,6 +153,17 @@ latex = ["latex2mathml"]
 wavedrom = ["wavedrom"]
 
 [[package]]
+name = "mistune"
+version = "3.0.2"
+description = "A sane and fast Markdown parser with useful plugins and renderers"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mistune-3.0.2-py3-none-any.whl", hash = "sha256:71481854c30fdbc938963d3605b72501f5c10a9320ecd412c121c163a1c7d205"},
+    {file = "mistune-3.0.2.tar.gz", hash = "sha256:fc7f93ded930c92394ef2cb6f04a8aabab4117a91449e72dcc8dfa646a508be8"},
+]
+
+[[package]]
 name = "mypy-extensions"
 version = "1.0.0"
 description = "Type system extensions for programs checked with the mypy type checker."
@@ -452,4 +463,4 @@ test = ["cairosvg", "pillow", "xmldiff"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "82711152ab07cc7ada2a03dae3ee997e027c8649c353c06ada80c1cc5aab63d4"
+content-hash = "ae796e274521059b1f50b23acc03efa3eaedc12f67bb8b64e9e0c019a9409973"

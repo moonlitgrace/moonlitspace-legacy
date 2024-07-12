@@ -2,9 +2,11 @@ import markdown2
 import re
 from selectolax.parser import HTMLParser
 
+from .markdown import markdown
 
 def markdown_to_text(md_string):
-    html = markdown2.markdown(md_string)
+    html = markdown(md_string)
+    print(html)
 
     tree = HTMLParser(html)
     # get only paragraphs tags text
