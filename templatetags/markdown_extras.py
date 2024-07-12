@@ -1,4 +1,5 @@
 from django import template
+from django.template.defaultfilters import stringfilter
 from selectolax.parser import HTMLParser
 import re
 
@@ -8,8 +9,9 @@ register = template.Library()
 
 
 @register.filter
-def markdown_to_text(md_string):
-    html = markdown(md_string)
+@stringfilter
+def markdown_to_text(md_str):
+    html = markdown(md_str)
 
     tree = HTMLParser(html)
     # get only paragraphs tags text
