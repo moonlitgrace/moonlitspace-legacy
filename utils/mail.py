@@ -34,20 +34,23 @@ def send_moonlit_mail(
         return True, None
     except BadHeaderError:
         if error_template_name:
-            return False, render_error_http_response(error_template_name, {
-                "title": "Oh no!",
-                "message": "Invalid header found"
-            })
+            return False, render_error_http_response(
+                error_template_name,
+                {"title": "Oh no!", "message": "Invalid header found"},
+            )
         else:
             return False, None
     except Exception as e:
-        """ handle other possible exceptions """
+        """handle other possible exceptions"""
         if settings.DEBUG:
             print(e)
         if error_template_name:
-            return False, render_error_http_response(error_template_name, {
-                "title": "Oops!",
-                "message": "Something went wrong, please re-check email and try again."
-            })
+            return False, render_error_http_response(
+                error_template_name,
+                {
+                    "title": "Oops!",
+                    "message": "Something went wrong, please re-check email and try again.",
+                },
+            )
         else:
             return False, None
