@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-from django.template.loader import get_template
-from django.core.mail import send_mail
 from django.urls import reverse
 
 from utils.mail import send_moonlit_mail
@@ -30,7 +28,7 @@ def newsletter_validate_view(request):
         reverse("newsletter_verification", kwargs={"entry_id": entry.entry_id})
     )
     template_name = "email/newsletter_verification.html"
-    error_template_name = "email/state.html"
+    error_template_name = "newsletter/state.html"
     context = {"verification_url": verification_url}
     subject = "[moonlitspace] - Email Verification"
 
