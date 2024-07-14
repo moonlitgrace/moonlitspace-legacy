@@ -5,6 +5,7 @@
 {% block head %}
 <link rel="stylesheet" href="{% static 'blog/css/detail.css' %}" />
 <link rel="stylesheet" href="{% static 'blog/css/pygments.css' %}" />
+<link rel="stylesheet" href="{% static 'blog/css/markdown.css' %}" type="text/css" media="screen" />
 {% endblock %}
 
 {% block title %}
@@ -14,6 +15,13 @@
 {% block body %}
 <div class="post-container">
     <h1 class="title"><span class="id">{{ post.id }}.</span>{{ post.title }}</h1>
-    <div>{{ post.content|markdown_text|safe }}</div>
+    <div class="markdown-body">
+        {{ post.content|markdown_text|safe }}
+    </div>
 </div>
+
+<!-- TODO: add copy code feature -->
+<script type="text/javascript">
+    console.log("HElla")
+</script>
 {% endblock %}

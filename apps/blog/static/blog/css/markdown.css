@@ -1,0 +1,32 @@
+.markdown-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: 20px;
+}
+
+.markdown-body h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.markdown-body h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.markdown-body h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.markdown-body h4 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.markdown-body blockquote {
+    border-left: 5px solid var(--neutral);
+    padding: 5px 0px 5px 10px;
+    color: var(--accent);
+}
