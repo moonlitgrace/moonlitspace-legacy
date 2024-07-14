@@ -2,6 +2,7 @@ import mistune
 from pygments import highlight
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import html
+
 # plugins
 from mistune.plugins.formatting import strikethrough
 from mistune.plugins.table import table
@@ -17,6 +18,7 @@ class CustomRenderer(mistune.HTMLRenderer):
             formatter = html.HtmlFormatter(cssclass="codehilite")
             return highlight(code, lexer, formatter)
         return "<pre><code>" + mistune.escape(code) + "</code></pre>"
+
 
 plugins = [
     strikethrough,

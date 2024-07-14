@@ -21,6 +21,7 @@ def markdown_to_text(md_str):
     text = re.sub(r"```.*?```", "", text, flags=re.DOTALL)
     return text
 
+
 @register.filter
 def markdown_text(md_str):
     return markdown(md_str)
