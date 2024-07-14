@@ -38,7 +38,7 @@
 .markdown-body table th,
 .markdown-body table td {
     border: 1px solid var(--neutral);
-    padding: 10px;
+    padding: 5px 15px;
 }
 
 .markdown-body table th {
@@ -48,7 +48,6 @@
 
 .markdown-body a {
     color: var(--accent);
-    transition: color 0.1s linear;
 }
 
 .markdown-body a:hover {

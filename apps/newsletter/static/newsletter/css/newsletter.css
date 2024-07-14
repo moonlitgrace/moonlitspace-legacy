@@ -48,7 +48,6 @@
     outline: none;
     background: transparent;
     color: inherit;
-    transition: 0.1s linear;
 }
 
 .newsletter-container form input[type="submit"] {
