@@ -19,7 +19,10 @@
             &lt;
         </a>
     </div>
-    <h1 class="title"><span class="id">{{ post.id }}.</span>{{ post.title }}</h1>
+    <div class="info">
+        <h1 class="title"><span class="id">{{ post.id }}.</span>{{ post.title }}</h1>
+        <span class="timestamp">{{ post.created_at|date:"d M Y"}} / 2 mins read</span>
+    </div>
     <div class="markdown-body">
         {{ post.content|markdown_text|safe }}
     </div>

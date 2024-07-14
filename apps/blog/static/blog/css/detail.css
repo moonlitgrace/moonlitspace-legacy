@@ -5,13 +5,23 @@
     position: relative;
 }
 
-.post-container .title {
+.post-container .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-container .info .title {
     font-weight: 900;
     font-size: 50px;
 }
 
-.post-container .title .id {
+.post-container .info .title .id {
     color: var(--neutral);
+}
+
+.post-container .info .timestamp {
+    color: var(--accent);
 }
 
 .post-container .floating-left-box {
