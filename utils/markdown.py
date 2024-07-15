@@ -19,6 +19,11 @@ class CustomRenderer(mistune.HTMLRenderer):
             return highlight(code, lexer, formatter)
         return "<pre><code>" + mistune.escape(code) + "</code></pre>"
 
+    def heading(self, text, level):
+        heading_id = mistune.escape(text.lower().replace(" ", "-"))
+        anchor = f'<a id="{heading_id}" class="h-anchor" href="#{heading_id}">#.</a>'
+        return f'<h{level} id="{heading_id}">{anchor}{text}</h{level}>'
+
 
 plugins = [
     strikethrough,

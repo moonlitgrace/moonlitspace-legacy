@@ -5,6 +5,15 @@
     line-height: 25px;
 }
 
+.markdown-body .h-anchor {
+    color: var(--neutral);
+    text-decoration: none;
+}
+
+.markdown-body .h-anchor:hover {
+    color: var(--accent);
+}
+
 .markdown-body h1 {
     font-size: 30px;
     font-weight: bold;
@@ -62,6 +71,7 @@
 .markdown-body ol {
     list-style: square;
     list-style-position: inside;
+    text-indent: 20px;
 }
 
 .markdown-body em {
