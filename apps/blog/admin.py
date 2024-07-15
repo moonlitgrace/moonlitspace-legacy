@@ -5,7 +5,6 @@ from .models import BlogPost, PinnedPost
 
 class BlogPostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ["title"]}
-
     search_fields = ("title",)
 
 
