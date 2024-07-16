@@ -1,7 +1,7 @@
 from django.db import models
 import readtime
 
-from utils.markdown import markdown
+from .utils import markdown
 
 
 class BlogPost(models.Model):

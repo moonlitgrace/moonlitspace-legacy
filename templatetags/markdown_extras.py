@@ -3,7 +3,7 @@ from django.template.defaultfilters import stringfilter
 from selectolax.parser import HTMLParser
 import re
 
-from utils.markdown import markdown
+from blog.utils import markdown
 
 register = template.Library()
 
