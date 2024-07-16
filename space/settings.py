@@ -75,8 +75,6 @@ TEMPLATES = [
         "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
-            # https://stackoverflow.com/a/55290208/23275228
-            "libraries": {"markdown_extras": "templatetags.markdown_extras"},
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
