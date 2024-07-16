@@ -9,13 +9,13 @@
 {% endblock %}
 
 {% block title %}
-{{ post.title }} - moonlitspace
+{{ post.title }} / moonlitspace
 {% endblock %}
 
 {% block body %}
 <div class="post-container">
     <div class="floating-left-box">
-        <a href="/" class="btn">
+        <a href="{% url 'blog-view' %}" class="btn">
             &lt;
         </a>
     </div>

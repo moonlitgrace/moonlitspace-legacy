@@ -22,7 +22,6 @@ def index(request):
 class BlogPostView(DetailView):
     model = BlogPost
     context_object_name = "post"
-    template_name = "blog/detail.html"
 
 
 class BlogPostListView(ListView):
