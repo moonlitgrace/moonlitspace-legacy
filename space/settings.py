@@ -163,7 +163,7 @@ PROFILE = {
     "email": env("PROFILE_EMAIL", default="moonlitgrace.gaia@gmail.com"),
     "avatar": env(
         "PROFILE_AVATAR",
-        default="https://avatars.githubusercontent.com/u/114811070?v=4",
+        default="/static/images/pfp.jpg",
     ),
     "bio": env("PROFILE_BIO", default="lighted by the moon"),
     "socials": {

@@ -1,22 +1,20 @@
-/* PINNED POSTS START */
-
-.pinned-posts {
+.recent-posts {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.pinned-posts .title {
+.recent-posts .title {
     font-size: 20px;
     font-weight: 900;
     color: var(--neutral);
 }
 
-.pinned-posts .title span {
+.recent-posts .title span {
     color: var(--foreground);
 }
 
-.pinned-posts .posts-grid-container {
+.recent-posts .posts-grid-container {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -25,17 +23,17 @@
 
 .posts-grid-container .gif {
     position: absolute;
-    top: -40px;
-    height: 40px;
+    top: -30px;
+    height: 30px;
     filter: contrast(2);
 }
 
 .posts-grid-container .gif.pokemon {
-    right: 40px;
+    right: 30px;
 }
 
 .posts-grid-container .gif.rabbit {
-    right: 200px;
+    right: 130px;
     transform: scaleX(-1);
 }
 
@@ -81,42 +79,36 @@
     color: var(--neutral);
 }
 
-/* pinned posts end */
-
-/* latest posts start */
-
-.latest-posts {
+.posts {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.latest-posts .post {
+.posts .post {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.latest-posts .post .title {
+.posts .post .title {
     font-size: 20px;
     font-weight: 900;
     text-decoration: none;
     color: inherit;
 }
 
-.latest-posts .post .title:hover {
+.posts .post .title:hover {
     text-decoration: underline;
 }
 
-.latest-posts .post .title .id {
+.posts .post .title .id {
     color: var(--neutral);
 }
 
-.latest-posts .post .content {
+.posts .post .content {
     font-size: 14px;
     color: var(--accent);
     font-weight: 500;
     line-height: 20px;
 }
-
-/* latest posts end */
