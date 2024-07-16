@@ -33,8 +33,9 @@
 <div class="latest-posts">
     {% for post in latest_posts %}
     <div class="post">
-        <a href="{% url 'post-detail-view' post.slug %}" class="title"><span class="id">{{ post.pk }}.</span>{{
-            post.title }}</a>
+        <a href="{% url 'post-detail-view' post.slug %}" class="title"><span class="id">
+            {{ post.pk }}.</span>{{post.title }}
+        </a>
         <p class="content">{{ post.content|markdown_to_text }}</p>
     </div>
     {% endfor %}

@@ -19,6 +19,7 @@ def index(request):
     }
     return render(request, "blog/index.html", context)
 
+
 class BlogPostView(DetailView):
     model = BlogPost
     context_object_name = "post"
