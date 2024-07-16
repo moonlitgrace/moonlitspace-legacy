@@ -1,17 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import redirect
 
-from apps.user.models import Profile
-from apps.blog.models import PinnedPost, BlogPost
-
-
+# index page not ready yet
 def index(request):
-    profile = Profile.objects.get(type="anonymous", active=True)
-    pinned_posts = PinnedPost.objects.all()
-    latest_posts = BlogPost.objects.all().exclude(pk__in=pinned_posts)
-
-    context = {
-        "profile": profile,
-        "pinned_posts": pinned_posts,
-        "latest_posts": latest_posts,
-    }
-    return render(request, "index.html", context)
+    return redirect("blog-view")
