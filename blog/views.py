@@ -9,7 +9,7 @@ from .models import BlogPost
 # Create your views here.
 def index(request):
     recent_posts = BlogPost.objects.all().order_by("-created_at")[:2]
-    posts = BlogPost.objects.all().exclude(pk__in=recent_posts)
+    posts = BlogPost.objects.all().exclude(pk__in=recent_posts)[:3]
 
     context = {
         "profile": settings.PROFILE,

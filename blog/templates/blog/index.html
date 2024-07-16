@@ -35,15 +35,17 @@ moonlitspace / Blog
 <div class="posts">
     {% for post in posts %}
     <div class="post">
-        <a href="{% url 'post-detail-view' post.slug %}" class="title"><span class="id">
-            {{ post.pk }}.</span>{{post.title }}
+        <a href="{% url 'post-detail-view' post.slug %}" class="title">
+            <span class="id">{{ post.pk }}.</span>{{post.title }}
         </a>
         <p class="content">{{ post.content|markdown_to_text }}</p>
     </div>
     {% endfor %}
+    {% if posts|has_more_than:3 %}
     <a href="{% url 'post-list-view' %}" class="btn">
         View All Posts
     </a>
+    {% endif %}
 </div>
 {% endif %}
 {% endblock %}
