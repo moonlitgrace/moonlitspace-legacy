@@ -4,7 +4,7 @@ from django.conf import settings
 from django.utils.html import strip_tags
 from typing import Union, Optional
 
-from apps.newsletter.utils import render_error_http_response
+from newsletter.utils import render_error_http_response
 
 
 def send_moonlit_mail(

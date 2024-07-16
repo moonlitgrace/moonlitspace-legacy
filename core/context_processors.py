@@ -1,4 +1,4 @@
-from apps.newsletter.forms import NewsLetterEntryFrom
+from newsletter.forms import NewsLetterEntryFrom
 
 
 def newsletter_form(request):

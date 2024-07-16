@@ -2,7 +2,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.shortcuts import render
 
-from apps.user.models import Profile
+from user.models import Profile
 from .models import BlogPost, PinnedPost
 
 
