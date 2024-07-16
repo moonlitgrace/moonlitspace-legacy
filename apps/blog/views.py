@@ -16,7 +16,7 @@ def index(request):
         "pinned_posts": pinned_posts,
         "latest_posts": latest_posts,
     }
-    return render(request, "index.html", context)
+    return render(request, "blog/index.html", context)
 
 class BlogPostView(DetailView):
     model = BlogPost

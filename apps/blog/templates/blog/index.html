@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+{% load static %}
+{% load markdown_extras %}
+
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'blog/css/index.css' %}">
+{% endblock %}
+
+{% block title %}
+{{ profile.aka }}
+{% endblock %}
+
+{% block body %}
+{{ block.super }}
+<div class="pinned-posts">
+    <span class="title">Moonlit<span>Posts</span></span>
+    <div class="posts-grid-container">
+        {% for post in pinned_posts %}
+        <div class="post-card">
+            <a href="/blog/{{ post.post.slug }}" class="post-title">
+                <span class="id">{{ post.post.pk }}.</span>{{ post.post.title }}</a>
+            <div class="post-bottom">
+                <img src="{{ post.cover }}">
+                <p>{{ post.post.content|markdown_to_text|truncatechars:75 }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="latest-posts">
+    {% for post in latest_posts %}
+    <div class="post">
+        <a href="/blog/{{ post.slug }}" class="title"><span class="id">{{ post.pk }}.</span>{{ post.title }}</a>
+        <p class="content">{{ post.content|markdown_to_text }}</p>
+    </div>
+    {% endfor %}
+    <a href="/posts" class="btn">
+        View All Posts
+    </a>
+</div>
+{% endblock %}
