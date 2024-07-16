@@ -26,7 +26,7 @@ def newsletter_validate_view(request):
     verification_url = request.build_absolute_uri(
         reverse("newsletter_verification", kwargs={"entry_id": entry.entry_id})
     )
-    template_name = "email/newsletter_verification.html"
+    template_name = "newsletter/mail/newsletter_verification.html"
     error_template_name = "newsletter/state.html"
     context = {"verification_url": verification_url}
     subject = "[moonlitspace] - Email Verification"
