@@ -13,23 +13,24 @@
             <h1>{{ profile.name }}</h1>
             <span>aka: @{{ profile.aka }}</span>
             <div class="social-links">
-                {% if profile.github %}
-                <a href="{{ profile.github }}" target="_blank">
+                {% if profile.socials.discord %}
+                <a href="{{ profile.socials.discord }}" target="_blank">
+                    Join Discord
+                </a>
+                {% endif %}
+                {% if profile.socials.github %}
+                <a href="{{ profile.socials.github }}" target="_blank">
                     Github
                 </a>
                 {% endif %}
-                {% if profile.discord %}
-                <a href="{{ profile.discord }}" target="_blank">
-                    Discord
-                </a>
-                {% endif %}
-                {% if profile.telegram %}
-                <a href="{{ profile.telegram }}" target="_blank">
+
+                {% if profile.socials.telegram %}
+                <a href="{{ profile.socials.telegram }}" target="_blank">
                     Telegram
                 </a>
                 {% endif %}
-                {% if profile.twitter %}
-                <a href="{{ profile.twitter }}" target="_blank">
+                {% if profile.socials.twitter %}
+                <a href="{{ profile.socials.twitter }}" target="_blank">
                     Twitter
                 </a>
                 {% endif %}

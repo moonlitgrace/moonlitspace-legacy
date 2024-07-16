@@ -24,10 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Initialize environment variables
 # https://alicecampkin.medium.com/how-to-set-up-environment-variables-in-django-f3c4db78c55f
 env = environ.Env(
-    # list of variables that should parse as boolean
+    # list of variables that should parse as boolean and default
     DEBUG=(bool, False),
     EMAIL_USE_TLS=(bool, True),
 )
+
 environ.Env.read_env(env_file=Path(BASE_DIR / ".env"))
 
 # Quick-start development settings - unsuitable for production
@@ -37,7 +38,7 @@ environ.Env.read_env(env_file=Path(BASE_DIR / ".env"))
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(env("DEBUG"))
+DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = []
 
@@ -52,7 +53,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Apps
-    "user",
     "blog",
     "newsletter",
 ]
@@ -146,9 +146,6 @@ STATICFILES_DIRS = [Path(BASE_DIR / "static")]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Custom user model as default
-AUTH_USER_MODEL = "user.CustomUser"
-
 # Configure SMTP
 EMAIL_BACKEND = env("EMAIL_BACKEND")
 EMAIL_HOST = env("EMAIL_HOST")
@@ -158,3 +155,21 @@ EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 
 DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
+
+# Profile configs
+PROFILE = {
+    "name": env("PROFILE_NAME", default="MoonlitGrace"),
+    "aka": env("PROFILE_AKA", default="tokitouq"),
+    "email": env("PROFILE_EMAIL", default="moonlitgrace.gaia@gmail.com"),
+    "avatar": env(
+        "PROFILE_AVATAR",
+        default="https://avatars.githubusercontent.com/u/114811070?v=4",
+    ),
+    "bio": env("PROFILE_BIO", default="lighted by the moon"),
+    "socials": {
+        "github": env("PROFILE_GITHUB", default="https://github.com/moonlitgrace"),
+        "discord": env("PROFILE_DISCORD", default="https://discord.gg/DpPjVwaU"),
+        "telegram": env("PROFILE_TELEGRAM", default="https://t.me/moonlitgrace"),
+        "twitter": env("PROFILE_TWITTER", default="https://x.com/moonlitgraceonx"),
+    },
+}

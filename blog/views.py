@@ -1,14 +1,14 @@
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.shortcuts import render
+from django.conf import settings
 
-from user.models import Profile
 from .models import BlogPost, PinnedPost
 
 
 # Create your views here.
 def index(request):
-    profile = Profile.objects.filter(type="anonymous", active=True).first()
+    profile = settings.PROFILE
     pinned_posts = PinnedPost.objects.all()
     latest_posts = BlogPost.objects.all().exclude(pk__in=pinned_posts)
 
