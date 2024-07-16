@@ -1,13 +1,9 @@
 from django.contrib import admin
 
-from .models import BlogPost, PinnedPost
+from .models import BlogPost
 
 
+@admin.register(BlogPost)
 class BlogPostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ["title"]}
     search_fields = ("title",)
-
-
-# Register your models here.
-admin.site.register(BlogPost, BlogPostAdmin)
-admin.site.register(PinnedPost)
