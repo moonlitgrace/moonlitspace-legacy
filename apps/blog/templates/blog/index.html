@@ -16,6 +16,8 @@
 <div class="pinned-posts">
     <span class="title">Moonlit<span>Posts</span></span>
     <div class="posts-grid-container">
+        <img class="rabbit gif" src="{% static 'gifs/rabbit.gif' %}">
+        <img class="pokemon gif" src="{% static 'gifs/pokemon.gif' %}">
         {% for post in pinned_posts %}
         <div class="post-card">
             <a href="{% url 'post-detail-view' post.post.slug %}" class="post-title">
@@ -31,7 +33,8 @@
 <div class="latest-posts">
     {% for post in latest_posts %}
     <div class="post">
-        <a href="{% url 'post-detail-view' post.slug %}" class="title"><span class="id">{{ post.pk }}.</span>{{ post.title }}</a>
+        <a href="{% url 'post-detail-view' post.slug %}" class="title"><span class="id">{{ post.pk }}.</span>{{
+            post.title }}</a>
         <p class="content">{{ post.content|markdown_to_text }}</p>
     </div>
     {% endfor %}

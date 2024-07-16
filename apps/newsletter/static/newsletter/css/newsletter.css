@@ -29,6 +29,16 @@
 .newsletter-container form {
     display: flex;
     gap: 20px;
+    position: relative;
+}
+
+.newsletter-container form .gif {
+    height: 50px;
+    width: auto;
+    transform: scaleX(-1);
+    position: absolute;
+    right: 0;
+    top: -50px;
 }
 
 .newsletter-container form input[type="email"] {

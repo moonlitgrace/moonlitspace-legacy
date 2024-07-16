@@ -20,6 +20,23 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    position: relative;
+}
+
+.posts-grid-container .gif {
+    position: absolute;
+    top: -40px;
+    height: 40px;
+    filter: contrast(2);
+}
+
+.posts-grid-container .gif.pokemon {
+    right: 40px;
+}
+
+.posts-grid-container .gif.rabbit {
+    right: 200px;
+    transform: scaleX(-1);
 }
 
 .posts-grid-container .post-card {
@@ -64,9 +81,9 @@
     color: var(--neutral);
 }
 
-/* PINNED POSTS END */
+/* pinned posts end */
 
-/* LATEST POSTS START */
+/* latest posts start */
 
 .latest-posts {
     display: flex;
@@ -102,4 +119,4 @@
     line-height: 20px;
 }
 
-/* LATEST POSTS END */
+/* latest posts end */
