@@ -1,0 +1,46 @@
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+.posts .post {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.posts .post .title {
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: none;
+    color: inherit;
+}
+
+.posts .post .title:hover {
+    text-decoration: underline;
+}
+
+.posts .post .title .id {
+    color: var(--neutral);
+}
+
+.posts .post .content {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.posts .floating-left-box {
+    position: absolute;
+    top: 0px;
+    left: -70px;
+    height: 100%;
+}
+
+.posts .floating-left-box .btn {
+    position: sticky;
+    top: 70px;
+}

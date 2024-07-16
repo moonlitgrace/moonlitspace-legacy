@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load markdown_extras %}
+
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'blog/css/blogpost_list.css' %}">
+{% endblock %}
+
+{% block title %}
+moonlitspace / Posts
+{% endblock %}
+
+{% block body %}
+<div class="posts">
+    <div class="floating-left-box">
+        <a href="{% url 'blog-view' %}" class="btn">
+            &lt;
+        </a>
+    </div>
+    {% for post in posts %}
+    <div class="post">
+        <a href="{% url 'post-detail-view' post.slug %}" class="title"><span class="id">{{ post.pk }}.</span>{{ post.title }}</a>
+        <p class="content">{{ post.content|markdown_to_text }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

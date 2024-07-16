@@ -1,4 +1,5 @@
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 from django.shortcuts import render
 
 from apps.user.models import Profile
@@ -22,3 +23,8 @@ class BlogPostView(DetailView):
     model = BlogPost
     context_object_name = "post"
     template_name = "blog/detail.html"
+
+
+class BlogPostListView(ListView):
+    model = BlogPost
+    context_object_name = "posts"
