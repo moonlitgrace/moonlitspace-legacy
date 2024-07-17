@@ -13,6 +13,7 @@ moonlitspace / Posts
 
 {% block body %}
 <div class="posts">
+    {% include "blog/breadcrumbs.html" %}
     {% for post in posts %}
     <div class="post">
         <a href="{% url 'post-detail-view' post.slug %}" class="title">

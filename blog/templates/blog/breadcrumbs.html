@@ -1,0 +1,42 @@
+{% load breadcrumbs %}
+
+<div class="breadcrumbs">
+    <a href="{% url 'home' %}">space</a>
+    <span>/</span>
+    {% with request.get_full_path|breadcrumb_path as breadcrumbs %}
+    {% for crumb in breadcrumbs %}
+    <a href="{{ crumb.url }}">{{ crumb.name }}</a>
+    {% if not forloop.last %}
+    <span>/</span>
+    {% endif %}
+    {% endfor %}
+    {% endwith %}
+</div>
+
+<style>
+    .breadcrumbs {
+        color: var(--accent);
+        display: flex;
+        gap: 5px;
+    }
+
+    .breadcrumbs a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+        color: var(--foreground);
+    }
+
+    @media (max-width: 648px) {
+        .breadcrumbs {
+            font-size: 15px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+        }
+    }
+</style>

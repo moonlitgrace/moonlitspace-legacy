@@ -15,6 +15,7 @@
 {% block body %}
 <div class="post-container">
     <div class="info">
+        {% include "blog/breadcrumbs.html" %}
         <h1 class="title"><span class="id">{{ post.id }}.</span>{{ post.title }}</h1>
         <span class="timestamp">
             {{ post.created_at|date:"d M Y"}} / {{ post.readtime }} read

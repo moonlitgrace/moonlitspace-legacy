@@ -23,7 +23,6 @@
     color: var(--accent);
 }
 
-
 @media (max-width: 648px) {
     .post-container .info .title {
         font-size: 40px;
