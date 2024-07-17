@@ -5,9 +5,10 @@ register = template.Library()
 
 @register.filter
 def breadcrumb_path(path: str):
-    # eg path: /blog/all
+    # eg path: /blog/all/
+    # output: [{"name": "blog", "url": "/blog"}, ...]
     segments = path.strip("/").split("/")
-    breadcrumbs = []
+    breadcrumbs = [{"name": "space", "url": "/"}]
     url = ""
 
     for segment in segments:

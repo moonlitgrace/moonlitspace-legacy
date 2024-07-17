@@ -1,8 +1,6 @@
 {% load breadcrumbs %}
 
 <div class="breadcrumbs">
-    <a href="{% url 'home' %}">space</a>
-    <span>/</span>
     {% with request.get_full_path|breadcrumb_path as breadcrumbs %}
     {% for crumb in breadcrumbs %}
     <a href="{{ crumb.url }}">{{ crumb.name }}</a>
