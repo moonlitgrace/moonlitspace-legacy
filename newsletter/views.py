@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.http import JsonResponse
 
 from .utils import send_mail
 from .models import NewsLetterEntry
@@ -63,3 +64,10 @@ def newsletter_verification_view(request, entry_id):
                 "message": "Email entry not found, please follow the steps shown on the verification email that we've sended before. Or try again.",
             },
         )
+
+
+def clear_newsletter_entries(request):
+    unverified_entries = NewsLetterEntry.objects.filter(verified=False)
+    unverified_entries.delete()
+
+    return JsonResponse({"message": "Success!"})

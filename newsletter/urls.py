@@ -9,4 +9,9 @@ urlpatterns = [
         views.newsletter_verification_view,
         name="newsletter_verification",
     ),
+    path(
+        "clear-entries/",
+        views.clear_newsletter_entries,
+        name="clear_newsletter_entries",
+    ),
 ]
