@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 import readtime
 
 from .utils import markdown
@@ -6,7 +7,7 @@ from .utils import markdown
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField()
+    slug = models.SlugField(editable=False)
     content = models.TextField()
     rendered_content = models.TextField(null=True, blank=True, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -16,6 +17,7 @@ class BlogPost(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
         self.rendered_content = markdown(self.content)
         if not self.readtime:
             self.readtime = readtime.of_markdown(self.content).text
