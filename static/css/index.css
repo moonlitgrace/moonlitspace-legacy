@@ -53,3 +53,30 @@ main {
 
 /* PROFILE SECTION END */
 
+@media (max-width: 648px) {
+    .profile-box {
+        gap: 20px;
+    }
+
+    .profile-box img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .profile-box .info-and-links h1 {
+        font-size: 25px;
+    }
+
+    .profile-box .info-and-links span {
+        font-size: 13px;
+    }
+
+    .profile-box .info-and-links .social-links {
+        flex-wrap: wrap;
+        row-gap: 5px;
+    }
+
+    .profile-box .info-and-links .social-links a {
+        font-size: 13px;
+    }
+}

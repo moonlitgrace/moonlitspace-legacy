@@ -25,7 +25,7 @@ moonlitspace / Blog
                 <span class="id">{{ post.pk }}.</span>{{ post.title }}</a>
             <div class="post-bottom">
                 <img src="{% static forloop.counter|cover_image %}">
-                <p>{{ post.content|markdown_to_text|truncatechars:75 }}</p>
+                <p>{{ post.content|markdown_to_text }}</p>
             </div>
         </div>
         {% endfor %}

@@ -5,7 +5,7 @@
 {% block head %}
 <link rel="stylesheet" href="{% static 'blog/css/detail.css' %}" />
 <link rel="stylesheet" href="{% static 'blog/css/pygments.css' %}" />
-<link rel="stylesheet" href="{% static 'blog/css/markdown.css' %}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{% static 'blog/css/markdown.css' %}" />
 {% endblock %}
 
 {% block title %}
@@ -14,11 +14,6 @@
 
 {% block body %}
 <div class="post-container">
-    <div class="floating-left-box">
-        <a href="{% url 'blog-view' %}" class="btn">
-            &lt;
-        </a>
-    </div>
     <div class="info">
         <h1 class="title"><span class="id">{{ post.id }}.</span>{{ post.title }}</h1>
         <span class="timestamp">
@@ -29,9 +24,4 @@
         {{ post.rendered_content|safe }}
     </div>
 </div>
-
-<!-- TODO: add copy code feature -->
-<script type="text/javascript">
-    console.log("HElla")
-</script>
 {% endblock %}

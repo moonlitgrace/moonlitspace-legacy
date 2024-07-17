@@ -61,8 +61,5 @@
 }
 
 .newsletter-container form input[type="submit"] {
-    font-size: 15px;
-    color: inherit;
-    font-weight: 900;
     cursor: pointer;
 }
