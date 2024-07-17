@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 from django.template.defaultfilters import slugify
 import readtime
 
@@ -12,6 +13,9 @@ class BlogPost(models.Model):
     rendered_content = models.TextField(null=True, blank=True, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
     readtime = models.CharField(max_length=100, null=True, blank=True)
+
+    def get_absolute_url(self):
+        return reverse("post-detail-view", args=[self.slug])
 
     def __str__(self):
         return self.title

@@ -21,7 +21,7 @@ moonlitspace / Blog
         <img class="pokemon gif" src="{% static 'gifs/pokemon.gif' %}">
         {% for post in recent_posts %}
         <div class="post-card">
-            <a href="{% url 'post-detail-view' post.slug %}" class="post-title">
+            <a href="{{ post.get_absolute_url }}" class="post-title">
                 <span class="id">{{ post.pk }}.</span>{{ post.title }}</a>
             <div class="post-bottom">
                 <img src="{% static forloop.counter|cover_image %}">
@@ -35,7 +35,7 @@ moonlitspace / Blog
 <div class="posts">
     {% for post in posts %}
     <div class="post">
-        <a href="{% url 'post-detail-view' post.slug %}" class="title">
+        <a href="{{ post.get_absolute_url }}" class="title">
             <span class="id">{{ post.pk }}.</span>{{post.title }}
         </a>
         <p class="content">{{ post.content|markdown_to_text }}</p>
