@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing project dependencies..."
-python3 -m pip3 install -r requirements.txt
+python3 -m pip install -r requirements.txt
 
 echo "Performing database migrations..."
 python3 manage.py makemigrations --no-input

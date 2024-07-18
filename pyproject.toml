@@ -16,6 +16,8 @@ pygments = "^2.18.0"
 readtime = "^3.0.0"
 django-stubs-ext = "^5.0.2"
 django-stubs = { extras = ["compatible-mypy"], version = "^5.0.2" }
+psycopg2-binary = "^2.9.9"
+whitenoise = "^6.7.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
@@ -34,7 +36,7 @@ venv = ".venv"
 plugins = ["mypy_django_plugin.main"]
 
 [tool.django-stubs]
-django_settings_module = "core.settings"
+django_settings_module = "space.settings"
 
 [build-system]
 requires = ["poetry-core"]
