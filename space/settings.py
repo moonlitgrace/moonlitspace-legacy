@@ -54,6 +54,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    # whitenoice middleware
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # other django's middlewares
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -83,6 +86,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "space.wsgi.application"
+
+# Storages
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 
 # Database
