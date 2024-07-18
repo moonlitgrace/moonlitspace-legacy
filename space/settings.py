@@ -28,13 +28,15 @@ SECRET_KEY = env("SECRET_KEY", default="moonlitsecret_key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
+# DEV or PROD environment
+PIPLINE = env("PIPLINE", default="development")
+
 if DEBUG:
     ALLOWED_HOSTS = ["*"]
 else:
     # eg: .vercel.app 0.0.0.0
     # add space b/w hosts
     ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS").split(" ")
-
 
 # Application definition
 
@@ -86,18 +88,18 @@ WSGI_APPLICATION = "space.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-if DEBUG:
+
+if PIPLINE == "production":
+    DATABASES = {
+        "default": env.db_url("DATABASE_URL")
+    }
+else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-else:
-    DATABASES = {
-        "default": env.db_url("DATABASE_URL")
-    }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

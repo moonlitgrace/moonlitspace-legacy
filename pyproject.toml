@@ -16,6 +16,7 @@ pygments = "^2.18.0"
 readtime = "^3.0.0"
 django-stubs-ext = "^5.0.2"
 django-stubs = { extras = ["compatible-mypy"], version = "^5.0.2" }
+psycopg2-binary = "^2.9.9"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
