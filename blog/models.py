@@ -8,7 +8,7 @@ from .utils import markdown
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(editable=False)
+    slug = models.SlugField(max_length=255, editable=False)
     content = models.TextField()
     rendered_content = models.TextField(null=True, blank=True, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
