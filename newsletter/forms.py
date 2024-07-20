@@ -11,6 +11,7 @@ class NewsLetterEntryFrom(forms.ModelForm):
             "email": forms.EmailInput(
                 attrs={
                     "placeholder": "Email Address*",
+                    "disabled": True,
                 }
             )
         }

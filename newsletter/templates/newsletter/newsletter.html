@@ -1,12 +1,12 @@
 {% load static %}
 
 <div class="newsletter-container">
-    <h4 class="title"><span>Moonlit</span>Letter</h4>
+    <h4 class="title"><span>Moonlit</span>Letter (WIP)</h4>
     <span class="subtitle">Join my news letter program and get instant updates via email</span>
     <form method="post" action="{% url 'newsletter_validate' %}">
         <img class="gif" src="{% static 'gifs/cat.gif' %}">
         {% csrf_token %}
         {{ newsletter_form.email }}
-        <input class="btn" type="submit" value="Join Program">
+        <input disabled class="btn" type="submit" value="Join Program">
     </form>
 </div>
