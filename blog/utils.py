@@ -1,3 +1,5 @@
+from django.utils.html import strip_tags
+
 import mistune
 from pygments import highlight
 from pygments.lexers import get_lexer_by_name
@@ -20,7 +22,7 @@ class CustomRenderer(mistune.HTMLRenderer):
         return "<pre><code>" + mistune.escape(code) + "</code></pre>"
 
     def heading(self, text, level):
-        heading_id = mistune.escape(text.lower().replace(" ", "-"))
+        heading_id = mistune.escape(strip_tags(text.lower().replace(" ", "-")))
         anchor = f'<a id="{heading_id}" class="h-anchor" href="#{heading_id}">#.</a>'
         return f'<h{level} id="{heading_id}">{anchor}{text}</h{level}>'
 
