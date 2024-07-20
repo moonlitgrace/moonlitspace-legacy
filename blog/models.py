@@ -23,6 +23,5 @@ class BlogPost(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         self.rendered_content = markdown(self.content)
-        if not self.readtime:
-            self.readtime = readtime.of_markdown(self.content).text
+        self.readtime = readtime.of_markdown(self.content).text
         super(BlogPost, self).save(*args, **kwargs)
