@@ -1,12 +1,9 @@
 /* CSS variables */
-/* TODO: add light palette */
 :root {
-    --background: #09090B;
-    --foreground: #FFF7F8;
-    --accent: #818182;
-    --neutral: #27272A;
-
-    --border: #1E1E1E;
+    --background: #0b0b0c;
+    --foreground: #cdd6f4;
+    --accent: #6c7086;
+    --neutral: #313244;
 }
 
 /* Fonts configuration */

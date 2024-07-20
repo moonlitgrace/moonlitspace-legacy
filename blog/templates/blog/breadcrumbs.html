@@ -3,9 +3,11 @@
 <div class="breadcrumbs">
     {% with request.get_full_path|breadcrumb_path as breadcrumbs %}
     {% for crumb in breadcrumbs %}
-    <a href="{{ crumb.url }}">{{ crumb.name }}</a>
     {% if not forloop.last %}
+    <a href="{{ crumb.url }}">{{ crumb.name }}</a>
     <span>/</span>
+    {% else %}
+    <span>{{ crumb.name }}</span>
     {% endif %}
     {% endfor %}
     {% endwith %}

@@ -80,6 +80,26 @@ jupyter = ["ipython (>=7.8.0)", "tokenize-rt (>=3.2.0)"]
 uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
+name = "catppuccin"
+version = "2.3.0"
+description = "🐍 Soothing pastel theme for Python."
+optional = false
+python-versions = "<4.0.0,>=3.9.0"
+files = [
+    {file = "catppuccin-2.3.0-py3-none-any.whl", hash = "sha256:cab824094309b5c638bc269d9bb23e3ec7bd76c8ba890d01545f3710b0ad5110"},
+    {file = "catppuccin-2.3.0.tar.gz", hash = "sha256:a8bbcde3b1f661d70509ebdb526ebc95b073899f2c7700b104d9c0fbb0407a24"},
+]
+
+[package.dependencies]
+pygments = {version = ">=2.17.2,<3.0.0", optional = true, markers = "extra == \"pygments\""}
+
+[package.extras]
+gh-pages = ["tinycss2 (>=1.2.1,<2.0.0)"]
+matplotlib = ["matplotlib (>=3.8.4,<4.0.0)"]
+pygments = ["pygments (>=2.17.2,<3.0.0)"]
+rich = ["rich (>=13.7.0,<14.0.0)"]
+
+[[package]]
 name = "click"
 version = "8.1.7"
 description = "Composable command line interface toolkit"
@@ -783,4 +803,4 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "2ce071b3d539691f847afdf325735d1c67dd737efec5ddea71035cb1c78297ef"
+content-hash = "dbc2086d5e0468525c1041003ddc0116e166943afa9d6322ff2693161b9ae8e7"

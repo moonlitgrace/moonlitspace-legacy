@@ -1,7 +1,10 @@
+from django.utils.html import strip_tags
+
 import mistune
 from pygments import highlight
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import html
+from pygments.styles import get_style_by_name
 
 # plugins
 from mistune.plugins.formatting import strikethrough
@@ -15,12 +18,12 @@ class CustomRenderer(mistune.HTMLRenderer):
     def block_code(self, code, info=None):
         if info:
             lexer = get_lexer_by_name(info, stripall=True)
-            formatter = html.HtmlFormatter(cssclass="codehilite")
+            formatter = html.HtmlFormatter(cssclass="codehilite", style=get_style_by_name("catppuccin-mocha"))
             return highlight(code, lexer, formatter)
         return "<pre><code>" + mistune.escape(code) + "</code></pre>"
 
     def heading(self, text, level):
-        heading_id = mistune.escape(text.lower().replace(" ", "-"))
+        heading_id = mistune.escape(strip_tags(text.lower().replace(" ", "-")))
         anchor = f'<a id="{heading_id}" class="h-anchor" href="#{heading_id}">#.</a>'
         return f'<h{level} id="{heading_id}">{anchor}{text}</h{level}>'
 

@@ -12,7 +12,7 @@ class BlogPost(models.Model):
     content = models.TextField()
     rendered_content = models.TextField(null=True, blank=True, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    readtime = models.CharField(max_length=100, null=True, blank=True)
+    readtime = models.CharField(max_length=100, null=True, blank=True, editable=False)
 
     def get_absolute_url(self):
         return reverse("post-detail-view", args=[self.slug])
@@ -23,6 +23,5 @@ class BlogPost(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         self.rendered_content = markdown(self.content)
-        if not self.readtime:
-            self.readtime = readtime.of_markdown(self.content).text
+        self.readtime = readtime.of_markdown(self.content).text
         super(BlogPost, self).save(*args, **kwargs)
