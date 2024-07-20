@@ -11,11 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Initialize environment variables
 # https://alicecampkin.medium.com/how-to-set-up-environment-variables-in-django-f3c4db78c55f
-env = environ.Env(
-    # list of variables that should parse as boolean and default
-    DEBUG=(bool, False),
-    EMAIL_USE_TLS=(bool, True),
-)
+env = environ.Env()
 
 environ.Env.read_env(env_file=Path(BASE_DIR / ".env"))
 
@@ -26,7 +22,7 @@ environ.Env.read_env(env_file=Path(BASE_DIR / ".env"))
 SECRET_KEY = env("SECRET_KEY", default="moonlitsecret_key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG")
+DEBUG = env.bool("DEBUG")
 
 # DEV or PROD environment
 PIPLINE = env("PIPLINE", default="development")
@@ -101,9 +97,7 @@ STORAGES = {
 
 
 if PIPLINE == "production":
-    DATABASES = {
-        "default": env.db_url("DATABASE_URL")
-    }
+    DATABASES = {"default": env.db_url("DATABASE_URL")}
 else:
     DATABASES = {
         "default": {
@@ -161,7 +155,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 EMAIL_BACKEND = env("EMAIL_BACKEND")
 EMAIL_HOST = env("EMAIL_HOST")
 EMAIL_PORT = env("EMAIL_PORT")
-EMAIL_USE_TLS = env("EMAIL_USE_TLS")
+EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS")
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 
