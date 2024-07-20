@@ -80,6 +80,6 @@
 }
 
 .markdown-body code {
-    background-color: var(--neutral);
-    padding: 3px 5px;
+    background-color: #1e1e2e;
+    padding: 1px 3px;
 }
