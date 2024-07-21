@@ -83,3 +83,7 @@
     background-color: #1e1e2e;
     padding: 1px 3px;
 }
+
+.markdown-body img {
+    max-width: 100%;
+}
