@@ -27,3 +27,4 @@ class BlogPostDetailView(DetailView):
 class BlogPostListView(ListView):
     model = BlogPost
     context_object_name = "posts"
+    ordering = ["-created_at"]
