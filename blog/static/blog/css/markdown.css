@@ -87,3 +87,14 @@
 .markdown-body img {
     max-width: 100%;
 }
+
+.markdown-body hr {
+    border: none;
+    text-align: center;
+}
+
+.markdown-body hr::before {
+    content: '. . .';
+    display: inline-block;
+    font-size: 25px;
+}
