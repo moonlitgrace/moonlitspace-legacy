@@ -46,9 +46,14 @@ INSTALLED_APPS = [
     # Apps
     "blog",
     "newsletter",
+    # Django hosts
+    "django_hosts",
 ]
 
 MIDDLEWARE = [
+    # Django_host middleware
+    "django_hosts.middleware.HostsRequestMiddleware",
+    # Django_host middleware
     "django.middleware.security.SecurityMiddleware",
     # whitenoice middleware
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -59,9 +64,19 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # Django_host middleware
+    "django_hosts.middleware.HostsResponseMiddleware",
 ]
 
 ROOT_URLCONF = "space.urls"
+
+# https://github.com/jazzband/django-hosts?tab=readme-ov-file#installation
+
+ROOT_HOSTCONF = "space.hosts"
+
+DEFAULT_HOST = "www"
+
+# Templates
 
 TEMPLATES = [
     {

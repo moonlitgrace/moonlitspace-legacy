@@ -172,6 +172,17 @@ docs = ["furo (>=2021.8.17b43,<2021.9.dev0)", "sphinx (>=3.5.0)", "sphinx-notfou
 testing = ["coverage[toml] (>=5.0a4)", "pytest (>=4.6.11)"]
 
 [[package]]
+name = "django-hosts"
+version = "6.0"
+description = "Dynamic and static host resolving for Django. Maps hostnames to URLconfs."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django-hosts-6.0.tar.gz", hash = "sha256:e7aec357504d36f384c65fba67deabc4552f36f347b96bb7a3d131a1250d7299"},
+    {file = "django_hosts-6.0-py3-none-any.whl", hash = "sha256:34a97a183b3fb8a00de3e0a8af5355a25ff5203019d2e213edd8f12c330cc303"},
+]
+
+[[package]]
 name = "django-stubs"
 version = "5.0.2"
 description = "Mypy stubs for Django"
@@ -803,4 +814,4 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "dbc2086d5e0468525c1041003ddc0116e166943afa9d6322ff2693161b9ae8e7"
+content-hash = "ac29297a2bc586764b0f3ef62496c0c78fdcda3290a79e29a5ec5b06e206aef5"
