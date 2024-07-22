@@ -8,7 +8,7 @@ def breadcrumb_path(path: str):
     # eg path: /blog/all/
     # output: [{"name": "blog", "url": "/blog"}, ...]
     segments = path.strip("/").split("/")
-    breadcrumbs = [{"name": "space", "url": "/"}]
+    breadcrumbs = []
     url = ""
 
     for segment in segments:
