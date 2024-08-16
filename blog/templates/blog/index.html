@@ -2,6 +2,7 @@
 {% load static %}
 {% load markdown_extras %}
 {% load custom_filters %}
+{% load hosts %}
 
 {% block head %}
 {{ block.super }}
@@ -42,7 +43,7 @@ moonlitspace / Blog
     </div>
     {% endfor %}
     {% if posts|has_more_than:3 %}
-    <a href="{% url 'post-list-view' %}" class="btn">
+    <a href="{% host_url 'post-list-view' host 'blog' %}" class="btn">
         View All Posts
     </a>
     {% endif %}

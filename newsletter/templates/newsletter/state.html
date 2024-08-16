@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load hosts %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'newsletter/css/state.css' %}">
@@ -17,7 +18,7 @@ Join program - MoonlitLetter
     <span class="helptext">
         {{ message }}
     </span>
-    <a href="{% url 'blog-view' %}" class="btn">
+    <a href="{% host_url 'blog-view' host 'blog' %}" class="btn">
         < Hit Home
     </a>
 </div>

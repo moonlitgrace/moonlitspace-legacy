@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse
+from django_hosts.resolvers import reverse
 
 from .utils import send_mail
 from .models import NewsLetterEntry
@@ -9,7 +9,7 @@ from .models import NewsLetterEntry
 def newsletter_validate_view(request):
     email = request.POST.get("email")
     if email is None:
-        return redirect("home")
+        return redirect(reverse("home", host="www"))
 
     if NewsLetterEntry.objects.filter(email=email).exists():
         return render(
@@ -24,7 +24,7 @@ def newsletter_validate_view(request):
     entry = NewsLetterEntry.objects.create(email=email)
 
     verification_url = request.build_absolute_uri(
-        reverse("newsletter_verification", kwargs={"entry_id": entry.entry_id})
+        reverse("newsletter_verification", kwargs={"entry_id": entry.entry_id}, host="newsletter")
     )
     template_name = "newsletter/mail/newsletter_verification.html"
     error_template_name = "newsletter/state.html"

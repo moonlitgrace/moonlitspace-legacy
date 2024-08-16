@@ -19,6 +19,7 @@ django-stubs = { extras = ["compatible-mypy"], version = "^5.0.4" }
 psycopg2-binary = "^2.9.9"
 whitenoise = "^6.7.0"
 catppuccin = {extras = ["pygments"], version = "^2.3.0"}
+django-hosts = "^6.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load markdown_extras %}
+{% load hosts %}
 
 {% block head %}
 {{ block.super }}
@@ -16,7 +17,7 @@ moonlitspace / Posts
     {% include "blog/breadcrumbs.html" %}
     {% for post in posts %}
     <div class="post">
-        <a href="{% url 'post-detail-view' post.slug %}" class="title">
+        <a href="{% host_url 'post-detail-view' host 'blog' post.slug %}" class="title">
             <span class="id">{{ post.pk }}.</span>{{ post.title }}
         </a>
         <p class="content">{{ post.content|markdown_to_text }}</p>

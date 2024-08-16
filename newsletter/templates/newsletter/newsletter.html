@@ -1,9 +1,10 @@
 {% load static %}
+{% load hosts %}
 
 <div class="newsletter-container">
     <h4 class="title"><span>Moonlit</span>Letter (WIP)</h4>
     <span class="subtitle">Join my news letter program and get instant updates via email</span>
-    <form method="post" action="{% url 'newsletter_validate' %}">
+    <form method="post" action="{% host_url 'newsletter_validate' host 'newsletter' %}">
         <img class="gif" src="{% static 'gifs/cat.gif' %}">
         {% csrf_token %}
         {{ newsletter_form.email }}
