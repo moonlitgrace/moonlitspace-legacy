@@ -4,10 +4,3 @@
 
 <h1 align="center">moonlitspace</h1>
 <p align="center"><code>a graceful space</code></p>
-<p align="center">
-  <i>
-    please somebody find me a better description for this T_T
-    <br>
-    thank you...
-  <i>
-</p>
